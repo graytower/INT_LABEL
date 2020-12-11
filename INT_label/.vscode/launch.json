@@ -1,0 +1,11 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CodeLens (Launch) - ctrl",
+            "request": "launch",
+            "mainClass": "experiment.ctrl",
+            "projectName": "P4_INT_Ver5_8f39f524"
+        }
+    ]
+}

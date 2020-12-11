@@ -1,0 +1,32 @@
+table_add mcast_table do_mcast 1 => 1
+mc_mgrp_create 1
+mc_node_create 0 2 3 4 5 6
+mc_node_associate 1 0
+
+table_add mcast_table do_mcast 2 => 2
+mc_mgrp_create 2
+mc_node_create 1 1 3 4 5 6
+mc_node_associate 2 1
+
+table_add mcast_table do_mcast 3 => 3
+mc_mgrp_create 3
+mc_node_create 2 1 2 4 5 6
+mc_node_associate 3 2
+
+table_add mcast_table do_mcast 4 => 4
+mc_mgrp_create 4
+mc_node_create 3 1 2 3 5 6
+mc_node_associate 4 3
+
+table_add mcast_table do_mcast 5 => 5
+mc_mgrp_create 5
+mc_node_create 4 1 2 3 4 6
+mc_node_associate 5 4
+
+table_add mcast_table do_mcast 6 => 6
+mc_mgrp_create 6
+mc_node_create 5 1 2 3 4 5
+mc_node_associate 6 5
+
+table_add int_table do_int => 25
+table_add spec_int_table do_spec_int => 25

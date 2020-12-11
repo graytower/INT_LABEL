@@ -1,0 +1,1 @@
+table_modify set_flag_table set_flag 1 => 0

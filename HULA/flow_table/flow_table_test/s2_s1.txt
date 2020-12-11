@@ -1,0 +1,12 @@
+table_add mcast_table do_mcast 1 => 1
+mc_mgrp_create 1
+mc_node_create 0 2
+mc_node_associate 1 0
+
+table_add mcast_table do_mcast 2 => 2
+mc_mgrp_create 2
+mc_node_create 1 1
+mc_node_associate 2 1
+
+table_add int_table do_int => 2
+table_add spec_int_table do_spec_int => 2

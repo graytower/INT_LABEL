@@ -1,0 +1,1484 @@
+{
+  "header_types" : [
+    {
+      "name" : "scalars_0",
+      "id" : 0,
+      "fields" : []
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "fields" : [
+        ["ingress_port", 9, false],
+        ["egress_spec", 9, false],
+        ["egress_port", 9, false],
+        ["instance_type", 32, false],
+        ["packet_length", 32, false],
+        ["enq_timestamp", 32, false],
+        ["enq_qdepth", 19, false],
+        ["deq_timedelta", 32, false],
+        ["deq_qdepth", 19, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["mcast_grp", 16, false],
+        ["egress_rid", 16, false],
+        ["checksum_error", 1, false],
+        ["parser_error", 32, false],
+        ["priority", 3, false],
+        ["_padding", 3, false]
+      ]
+    },
+    {
+      "name" : "ethernet_t",
+      "id" : 2,
+      "fields" : [
+        ["dstAddr", 48, false],
+        ["srcAddr", 48, false]
+      ]
+    },
+    {
+      "name" : "type_2_t",
+      "id" : 3,
+      "fields" : [
+        ["type", 16, false]
+      ]
+    },
+    {
+      "name" : "int_option_t",
+      "id" : 4,
+      "fields" : [
+        ["type", 1, false],
+        ["rsvd", 7, false],
+        ["int_num", 8, false]
+      ]
+    },
+    {
+      "name" : "inthdr_t",
+      "id" : 5,
+      "fields" : [
+        ["sw_id", 8, false],
+        ["ingress_port", 8, false],
+        ["egress_port", 8, false],
+        ["rsvd0", 8, false],
+        ["ingress_global_timestamp", 48, false],
+        ["egress_global_timestamp", 48, false],
+        ["enq_timestamp", 32, false],
+        ["rsvd1", 8, false],
+        ["enq_qdepth", 24, false],
+        ["deq_timedelta", 32, false],
+        ["rsvd2", 8, false],
+        ["deq_qdepth", 24, false]
+      ]
+    },
+    {
+      "name" : "type_1_t",
+      "id" : 6,
+      "fields" : [
+        ["type", 16, false]
+      ]
+    },
+    {
+      "name" : "sr_hdr_t",
+      "id" : 7,
+      "fields" : [
+        ["next_hdr", 1, false],
+        ["rsvd", 7, false],
+        ["sr_length", 8, false]
+      ]
+    },
+    {
+      "name" : "sr_t",
+      "id" : 8,
+      "fields" : [
+        ["type", 1, false],
+        ["rsvd", 7, false],
+        ["next_port", 8, false]
+      ]
+    }
+  ],
+  "headers" : [
+    {
+      "name" : "scalars",
+      "id" : 0,
+      "header_type" : "scalars_0",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "standard_metadata",
+      "id" : 1,
+      "header_type" : "standard_metadata",
+      "metadata" : true,
+      "pi_omit" : true
+    },
+    {
+      "name" : "ethernet",
+      "id" : 2,
+      "header_type" : "ethernet_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "type_2",
+      "id" : 3,
+      "header_type" : "type_2_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "int_option",
+      "id" : 4,
+      "header_type" : "int_option_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "inthdr",
+      "id" : 5,
+      "header_type" : "inthdr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "type_1[0]",
+      "id" : 6,
+      "header_type" : "type_1_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "sr_hdr[0]",
+      "id" : 7,
+      "header_type" : "sr_hdr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "sr[0]",
+      "id" : 8,
+      "header_type" : "sr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "sr[1]",
+      "id" : 9,
+      "header_type" : "sr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "sr[2]",
+      "id" : 10,
+      "header_type" : "sr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "sr[3]",
+      "id" : 11,
+      "header_type" : "sr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    },
+    {
+      "name" : "sr[4]",
+      "id" : 12,
+      "header_type" : "sr_t",
+      "metadata" : false,
+      "pi_omit" : true
+    }
+  ],
+  "header_stacks" : [
+    {
+      "name" : "type_1",
+      "id" : 0,
+      "header_type" : "type_1_t",
+      "size" : 1,
+      "header_ids" : [6]
+    },
+    {
+      "name" : "sr_hdr",
+      "id" : 1,
+      "header_type" : "sr_hdr_t",
+      "size" : 1,
+      "header_ids" : [7]
+    },
+    {
+      "name" : "sr",
+      "id" : 2,
+      "header_type" : "sr_t",
+      "size" : 5,
+      "header_ids" : [8, 9, 10, 11, 12]
+    }
+  ],
+  "header_union_types" : [],
+  "header_unions" : [],
+  "header_union_stacks" : [],
+  "field_lists" : [],
+  "errors" : [
+    ["NoError", 1],
+    ["PacketTooShort", 2],
+    ["NoMatch", 3],
+    ["StackOutOfBounds", 4],
+    ["HeaderTooShort", 5],
+    ["ParserTimeout", 6],
+    ["ParserInvalidArgument", 7]
+  ],
+  "enums" : [],
+  "parsers" : [
+    {
+      "name" : "parser",
+      "id" : 0,
+      "init_state" : "start",
+      "parse_states" : [
+        {
+          "name" : "start",
+          "id" : 0,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "ethernet"
+                }
+              ],
+              "op" : "extract"
+            },
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "type_1[0]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0700",
+              "mask" : null,
+              "next_state" : "parse_sr_hdr"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0701",
+              "mask" : null,
+              "next_state" : "parse_int_option"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["type_1[0]", "type"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_sr_hdr",
+          "id" : 1,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "sr_hdr[0]"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : "parse_sr"
+            }
+          ],
+          "transition_key" : []
+        },
+        {
+          "name" : "parse_sr",
+          "id" : 2,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "stack",
+                  "value" : "sr"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x00",
+              "mask" : null,
+              "next_state" : "parse_sr"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x01",
+              "mask" : null,
+              "next_state" : "parse_type_2"
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "stack_field",
+              "value" : ["sr", "type"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_type_2",
+          "id" : 3,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "type_2"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "type" : "hexstr",
+              "value" : "0x0701",
+              "mask" : null,
+              "next_state" : "parse_int_option"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x0800",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : [
+            {
+              "type" : "field",
+              "value" : ["type_2", "type"]
+            }
+          ]
+        },
+        {
+          "name" : "parse_int_option",
+          "id" : 4,
+          "parser_ops" : [
+            {
+              "parameters" : [
+                {
+                  "type" : "regular",
+                  "value" : "int_option"
+                }
+              ],
+              "op" : "extract"
+            }
+          ],
+          "transitions" : [
+            {
+              "value" : "default",
+              "mask" : null,
+              "next_state" : null
+            }
+          ],
+          "transition_key" : []
+        }
+      ]
+    }
+  ],
+  "parse_vsets" : [],
+  "deparsers" : [
+    {
+      "name" : "deparser",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "../p4_source_code/HULA.p4",
+        "line" : 263,
+        "column" : 8,
+        "source_fragment" : "MyDeparser"
+      },
+      "order" : ["ethernet", "type_1[0]", "sr_hdr[0]", "sr[0]", "sr[1]", "sr[2]", "sr[3]", "sr[4]", "type_2", "int_option", "inthdr"],
+      "primitives" : []
+    }
+  ],
+  "meter_arrays" : [],
+  "counter_arrays" : [],
+  "register_arrays" : [],
+  "calculations" : [],
+  "learn_lists" : [],
+  "actions" : [
+    {
+      "name" : "NoAction",
+      "id" : 0,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyIngress.drop",
+      "id" : 1,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 137,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.do_sr",
+      "id" : 2,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_spec"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["sr[0]", "next_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0x01ff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 141,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.egress_spec = (bit<9>)hdr.sr[0].next_port"
+          }
+        },
+        {
+          "op" : "pop",
+          "parameters" : [
+            {
+              "type" : "header_stack",
+              "value" : "sr"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 142,
+            "column" : 8,
+            "source_fragment" : "hdr.sr.pop_front(1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.do_sr_final",
+      "id" : 3,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "pop",
+          "parameters" : [
+            {
+              "type" : "header_stack",
+              "value" : "type_1"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 146,
+            "column" : 8,
+            "source_fragment" : "hdr.type_1.pop_front(1)"
+          }
+        },
+        {
+          "op" : "pop",
+          "parameters" : [
+            {
+              "type" : "header_stack",
+              "value" : "sr_hdr"
+            },
+            {
+              "type" : "hexstr",
+              "value" : "0x1"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 147,
+            "column" : 8,
+            "source_fragment" : "hdr.sr_hdr.pop_front(1)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyIngress.do_mcast",
+      "id" : 4,
+      "runtime_data" : [
+        {
+          "name" : "mcast_grp",
+          "bitwidth" : 16
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "mcast_grp"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 151,
+            "column" : 8,
+            "source_fragment" : "standard_metadata.mcast_grp = mcast_grp"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "NoAction",
+      "id" : 5,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 6,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "NoAction",
+      "id" : 7,
+      "runtime_data" : [],
+      "primitives" : []
+    },
+    {
+      "name" : "MyEgress.drop",
+      "id" : 8,
+      "runtime_data" : [],
+      "primitives" : [
+        {
+          "op" : "mark_to_drop",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "standard_metadata"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 188,
+            "column" : 8,
+            "source_fragment" : "mark_to_drop(standard_metadata)"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyEgress.do_int",
+      "id" : 9,
+      "runtime_data" : [
+        {
+          "name" : "sw_id",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "add_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "inthdr"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 192,
+            "column" : 1,
+            "source_fragment" : "hdr.inthdr.setValid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "sw_id"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 194,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.sw_id = sw_id"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "ingress_port"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 195,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.ingress_port=(bit<8>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "egress_port"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 196,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.egress_port=(bit<8>)standard_metadata.ingress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "ingress_global_timestamp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "ingress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 197,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.ingress_global_timestamp=(bit<48>)standard_metadata.ingress_global_timestamp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "egress_global_timestamp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "egress_global_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 198,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.egress_global_timestamp=(bit<48>)standard_metadata.egress_global_timestamp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "enq_timestamp"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "enq_timestamp"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 199,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.enq_timestamp=(bit<32>)standard_metadata.enq_timestamp"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "enq_qdepth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "enq_qdepth"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 200,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.enq_qdepth=(bit<24>)standard_metadata.enq_qdepth"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "deq_timedelta"]
+            },
+            {
+              "type" : "field",
+              "value" : ["standard_metadata", "deq_timedelta"]
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 201,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.deq_timedelta=(bit<32>)standard_metadata.deq_timedelta"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "deq_qdepth"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "deq_qdepth"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xffffff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 202,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.deq_qdepth=(bit<24>)standard_metadata.deq_qdepth"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["int_option", "int_num"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["int_option", "int_num"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 204,
+            "column" : 8,
+            "source_fragment" : "hdr.int_option.int_num = hdr.int_option.int_num + 1"
+          }
+        }
+      ]
+    },
+    {
+      "name" : "MyEgress.do_spec_int",
+      "id" : 10,
+      "runtime_data" : [
+        {
+          "name" : "sw_id",
+          "bitwidth" : 8
+        }
+      ],
+      "primitives" : [
+        {
+          "op" : "add_header",
+          "parameters" : [
+            {
+              "type" : "header",
+              "value" : "inthdr"
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 208,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.setValid()"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "sw_id"]
+            },
+            {
+              "type" : "runtime_data",
+              "value" : 0
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 209,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.sw_id = sw_id"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "ingress_port"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "ingress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 210,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.ingress_port=(bit<8>)standard_metadata.ingress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["inthdr", "egress_port"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "field",
+                    "value" : ["standard_metadata", "egress_port"]
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 211,
+            "column" : 8,
+            "source_fragment" : "hdr.inthdr.egress_port = (bit<8>)standard_metadata.egress_port"
+          }
+        },
+        {
+          "op" : "assign",
+          "parameters" : [
+            {
+              "type" : "field",
+              "value" : ["int_option", "int_num"]
+            },
+            {
+              "type" : "expression",
+              "value" : {
+                "type" : "expression",
+                "value" : {
+                  "op" : "&",
+                  "left" : {
+                    "type" : "expression",
+                    "value" : {
+                      "op" : "+",
+                      "left" : {
+                        "type" : "field",
+                        "value" : ["int_option", "int_num"]
+                      },
+                      "right" : {
+                        "type" : "hexstr",
+                        "value" : "0x01"
+                      }
+                    }
+                  },
+                  "right" : {
+                    "type" : "hexstr",
+                    "value" : "0xff"
+                  }
+                }
+              }
+            }
+          ],
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 212,
+            "column" : 8,
+            "source_fragment" : "hdr.int_option.int_num = hdr.int_option.int_num + 1"
+          }
+        }
+      ]
+    }
+  ],
+  "pipelines" : [
+    {
+      "name" : "ingress",
+      "id" : 0,
+      "source_info" : {
+        "filename" : "../p4_source_code/HULA.p4",
+        "line" : 133,
+        "column" : 8,
+        "source_fragment" : "MyIngress"
+      },
+      "init_table" : "node_2",
+      "tables" : [
+        {
+          "name" : "tbl_do_sr_final",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 170,
+            "column" : 16,
+            "source_fragment" : "do_sr_final()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [3],
+          "actions" : ["MyIngress.do_sr_final"],
+          "base_default_next" : "tbl_do_sr",
+          "next_tables" : {
+            "MyIngress.do_sr_final" : "tbl_do_sr"
+          },
+          "default_entry" : {
+            "action_id" : 3,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "tbl_do_sr",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 172,
+            "column" : 12,
+            "source_fragment" : "do_sr()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [2],
+          "actions" : ["MyIngress.do_sr"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.do_sr" : null
+          },
+          "default_entry" : {
+            "action_id" : 2,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyIngress.mcast_table",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 154,
+            "column" : 10,
+            "source_fragment" : "mcast_table"
+          },
+          "key" : [
+            {
+              "match_type" : "exact",
+              "name" : "standard_metadata.ingress_port",
+              "target" : ["standard_metadata", "ingress_port"],
+              "mask" : null
+            }
+          ],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [4, 1, 0],
+          "actions" : ["MyIngress.do_mcast", "MyIngress.drop", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyIngress.do_mcast" : null,
+            "MyIngress.drop" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 1,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_2",
+          "id" : 0,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 168,
+            "column" : 11,
+            "source_fragment" : "hdr.sr[0].isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["sr[0]", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_3",
+          "false_next" : "MyIngress.mcast_table"
+        },
+        {
+          "name" : "node_3",
+          "id" : 1,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 169,
+            "column" : 15,
+            "source_fragment" : "hdr.sr[0].type==1"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["sr[0]", "type"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x01"
+              }
+            }
+          },
+          "true_next" : "tbl_do_sr_final",
+          "false_next" : "tbl_do_sr"
+        }
+      ]
+    },
+    {
+      "name" : "egress",
+      "id" : 1,
+      "source_info" : {
+        "filename" : "../p4_source_code/HULA.p4",
+        "line" : 184,
+        "column" : 8,
+        "source_fragment" : "MyEgress"
+      },
+      "init_table" : "node_9",
+      "tables" : [
+        {
+          "name" : "tbl_drop",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 235,
+            "column" : 20,
+            "source_fragment" : "drop()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [8],
+          "actions" : ["MyEgress.drop"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyEgress.drop" : null
+          },
+          "default_entry" : {
+            "action_id" : 8,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        },
+        {
+          "name" : "MyEgress.int_table",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 215,
+            "column" : 10,
+            "source_fragment" : "int_table"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [9, 5],
+          "actions" : ["MyEgress.do_int", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyEgress.do_int" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 5,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "MyEgress.spec_int_table",
+          "id" : 5,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 223,
+            "column" : 10,
+            "source_fragment" : "spec_int_table"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [10, 6],
+          "actions" : ["MyEgress.do_spec_int", "NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "MyEgress.do_spec_int" : null,
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 6,
+            "action_const" : false,
+            "action_data" : [],
+            "action_entry_const" : false
+          }
+        },
+        {
+          "name" : "tbl_NoAction",
+          "id" : 6,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 246,
+            "column" : 12,
+            "source_fragment" : "NoAction()"
+          },
+          "key" : [],
+          "match_type" : "exact",
+          "type" : "simple",
+          "max_size" : 1024,
+          "with_counters" : false,
+          "support_timeout" : false,
+          "direct_meters" : null,
+          "action_ids" : [7],
+          "actions" : ["NoAction"],
+          "base_default_next" : null,
+          "next_tables" : {
+            "NoAction" : null
+          },
+          "default_entry" : {
+            "action_id" : 7,
+            "action_const" : true,
+            "action_data" : [],
+            "action_entry_const" : true
+          }
+        }
+      ],
+      "action_profiles" : [],
+      "conditionals" : [
+        {
+          "name" : "node_9",
+          "id" : 2,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 232,
+            "column" : 12,
+            "source_fragment" : "hdr.int_option.isValid()"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "d2b",
+              "left" : null,
+              "right" : {
+                "type" : "field",
+                "value" : ["int_option", "$valid$"]
+              }
+            }
+          },
+          "true_next" : "node_10",
+          "false_next" : "tbl_NoAction"
+        },
+        {
+          "name" : "node_10",
+          "id" : 3,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 233,
+            "column" : 16,
+            "source_fragment" : "hdr.int_option.type==0"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["int_option", "type"]
+              },
+              "right" : {
+                "type" : "hexstr",
+                "value" : "0x00"
+              }
+            }
+          },
+          "true_next" : "node_11",
+          "false_next" : "MyEgress.spec_int_table"
+        },
+        {
+          "name" : "node_11",
+          "id" : 4,
+          "source_info" : {
+            "filename" : "../p4_source_code/HULA.p4",
+            "line" : 234,
+            "column" : 19,
+            "source_fragment" : "standard_metadata.ingress_port == standard_metadata.egress_port"
+          },
+          "expression" : {
+            "type" : "expression",
+            "value" : {
+              "op" : "==",
+              "left" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "ingress_port"]
+              },
+              "right" : {
+                "type" : "field",
+                "value" : ["standard_metadata", "egress_port"]
+              }
+            }
+          },
+          "true_next" : "tbl_drop",
+          "false_next" : "MyEgress.int_table"
+        }
+      ]
+    }
+  ],
+  "checksums" : [],
+  "force_arith" : [],
+  "extern_instances" : [],
+  "field_aliases" : [
+    [
+      "queueing_metadata.enq_timestamp",
+      ["standard_metadata", "enq_timestamp"]
+    ],
+    [
+      "queueing_metadata.enq_qdepth",
+      ["standard_metadata", "enq_qdepth"]
+    ],
+    [
+      "queueing_metadata.deq_timedelta",
+      ["standard_metadata", "deq_timedelta"]
+    ],
+    [
+      "queueing_metadata.deq_qdepth",
+      ["standard_metadata", "deq_qdepth"]
+    ],
+    [
+      "intrinsic_metadata.ingress_global_timestamp",
+      ["standard_metadata", "ingress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.egress_global_timestamp",
+      ["standard_metadata", "egress_global_timestamp"]
+    ],
+    [
+      "intrinsic_metadata.mcast_grp",
+      ["standard_metadata", "mcast_grp"]
+    ],
+    [
+      "intrinsic_metadata.egress_rid",
+      ["standard_metadata", "egress_rid"]
+    ],
+    [
+      "intrinsic_metadata.priority",
+      ["standard_metadata", "priority"]
+    ]
+  ],
+  "program" : "../p4_source_code/HULA.p4",
+  "__meta__" : {
+    "version" : [2, 18],
+    "compiler" : "https://github.com/p4lang/p4c"
+  }
+}

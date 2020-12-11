@@ -1,0 +1,67 @@
+table_add mcast_table do_mcast 1 => 1
+table_add mcast_table do_mcast 2 => 1
+table_add mcast_table do_mcast 3 => 1
+table_add mcast_table do_mcast 4 => 1
+table_add mcast_table do_mcast 5 => 1
+table_add mcast_table do_mcast 6 => 1
+table_add mcast_table do_mcast 7 => 1
+table_add mcast_table do_mcast 8 => 1
+table_add mcast_table do_mcast 9 => 1
+table_add mcast_table do_mcast 10 => 1
+table_add mcast_table do_mcast 11 => 2
+table_add mcast_table do_mcast 12 => 3
+table_add mcast_table do_mcast 13 => 4
+table_add mcast_table do_mcast 14 => 5
+table_add mcast_table do_mcast 15 => 6
+table_add mcast_table do_mcast 16 => 7
+table_add mcast_table do_mcast 17 => 8
+table_add mcast_table do_mcast 18 => 9
+table_add mcast_table do_mcast 19 => 10
+table_add mcast_table do_mcast 20 => 11
+
+mc_mgrp_create 1
+mc_node_create 0 11 12 13 14 15 16 17 18 19 20
+mc_node_associate 1 0
+
+mc_mgrp_create 2
+mc_node_create 1 1 2 3 4 5 6 7 8 9 10 12 13 14 15 16 17 18 19 20
+mc_node_associate 2 1
+
+mc_mgrp_create 3
+mc_node_create 2 1 2 3 4 5 6 7 8 9 10 11 13 14 15 16 17 18 19 20
+mc_node_associate 3 2
+
+mc_mgrp_create 4
+mc_node_create 3 1 2 3 4 5 6 7 8 9 10 11 12 14 15 16 17 18 19 20
+mc_node_associate 4 3
+
+mc_mgrp_create 5
+mc_node_create 4 1 2 3 4 5 6 7 8 9 10 11 12 13 15 16 17 18 19 20
+mc_node_associate 5 4
+
+mc_mgrp_create 6
+mc_node_create 5 1 2 3 4 5 6 7 8 9 10 11 12 13 14 16 17 18 19 20
+mc_node_associate 6 5
+
+mc_mgrp_create 7
+mc_node_create 6 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 17 18 19 20
+mc_node_associate 7 6
+
+mc_mgrp_create 8
+mc_node_create 7 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 18 19 20
+mc_node_associate 8 7
+
+mc_mgrp_create 9
+mc_node_create 8 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 19 20
+mc_node_associate 9 8
+
+mc_mgrp_create 10
+mc_node_create 9 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 20
+mc_node_associate 10 9
+
+mc_mgrp_create 11
+mc_node_create 10 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19
+mc_node_associate 11 10
+
+table_add int_table do_int => 133
+table_add spec_int_table do_spec_int => 133
