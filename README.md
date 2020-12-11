@@ -13,37 +13,37 @@ INT-label is decoupled from the topology, allowing seamless adaptation to link f
 # Experiment result
 Experiment result contains preliminary experimental results data and figures.
 
-## Fig.2
+## Fig.3
 The impact of label interval on coverage rate and bandwidth occupation.
 
-## Fig.3
+## Fig.4
 The number of packet carried INT information under different label interval.
 
-## Fig.4
+## Fig.5
 The data plane label times under different label interval.
 
-## Fig.5
+## Fig.6
 How the relation between label interval and telemetry resolution affects the coverage rate.
 
-## Fig.6
+## Fig.7
 The impact of label interval on coverage rate and INT header bandwidth occupation.
 
-## Fig.7
+## Fig.8
 The impact of data plane label interval on network-wide coverage rate changes over time.
 
-## Fig.8
+## Fig.9
 Different coverage rates under Base A/B and Pro strategies.
 
-## Fig.9 
+## Fig.10 
 Network-wide coverage degradation due to loss of packets under Base A/B and Pro strategies.
 
-## Fig.10 
+## Fig.11 
 Packet loss rate (due to rate limit) under different label/probe intervals (Base A/B vs HULA).
 
-## Fig.11
+## Fig.12
 Distribution of label times.
 
-## Fig.12.13
+## Fig.13.14
 ### plt.py
 The number of vantage servers required under different scale FatTree topologies.
 ### plt2.py
